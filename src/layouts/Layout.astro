@@ -28,7 +28,7 @@ const { title } = Astro.props;
 			<meta name="apple-mobile-web-app-status-bar-style" content="#1d2b40">
 			<title>Sass Product || Jano - Creative Multipurpose Tailwind CSS Template</title>
 			<!-- Favicon -->
-			<link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+			<link rel="icon" type="image/png" sizes="56x56" href="/images/favicon/icon.png">
 			<!-- Main style sheet -->
 			<link rel="stylesheet" type="text/css" href="/fonts/recoleta/stylesheet.css" media="all">
 			<link rel="stylesheet" type="text/css" href="/fonts/gordita/stylesheet.css" media="all">
@@ -95,5 +95,24 @@ const { title } = Astro.props;
 			<!-- Theme js -->
 			<script is:inline src="/js/theme.js"></script>
 			</div> <!-- /.main-page-wrapper -->
+
+			<div id="preloader">
+				<div id="ctn-preloader" class="ctn-preloader items-center flex h-full justify-center fixed w-full z-[999999] left-0 top-0 bg-white">
+					<div class="animation-preloader absolute z-[100] text-center">
+						<div class="icon inline-block relative">
+							<img src="images/logo/logo_01.svg" alt="" class="m-auto block animate-[rotated_12s_infinite_linear]" width="40"></div>
+						<div class="txt-loading mt-3 select-none">
+							<span data-text-preloader="DESIGN" class="letters-loading font-bold tracking-[12px] inline-block text-[rgb(255_50_148_/_20%)] relative text-[35px] leading-[30px] font-Recoleta before:animate-[letters-loading_4s_infinite] before:text-[color:var(--prime-ten)] before:content-[attr(data-text-preloader)] before:opacity-0 before:leading-[30px] before:absolute before:left-0 before:top-0">
+								DESIGN
+							</span>
+							<span data-text-preloader="2" class="letters-loading font-bold tracking-[12px] inline-block text-[rgb(255_50_148_/_20%)] relative text-[35px] leading-[30px] font-Recoleta before:animate-[letters-loading_4s_infinite] before:text-[color:var(--prime-ten)] before:content-[attr(data-text-preloader)] before:opacity-0 before:leading-[30px] before:absolute before:left-0 before:top-0">
+								2
+							</span>
+							<span data-text-preloader="TAILWIND" class="letters-loading font-bold tracking-[12px] inline-block text-[rgb(255_50_148_/_20%)] relative text-[35px] leading-[30px] font-Recoleta before:animate-[letters-loading_4s_infinite] before:text-[color:var(--prime-ten)] before:content-[attr(data-text-preloader)] before:opacity-0 before:leading-[30px] before:absolute before:left-0 before:top-0">
+								TAILWIND
+							</span>
+						</div>
+					</div>
+				</div>
 	</body>
 </html>

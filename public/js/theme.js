@@ -37,7 +37,7 @@
         }
 
 // ------------------------ Navigation Scroll
-        $(window).on('scroll', function (){   
+        $(window).on('scroll', function (){
           var sticky = $('.sticky-menu'),
           scroll = $(window).scrollTop();
           if (scroll >= 100) sticky.addClass('fixed_top');
@@ -68,7 +68,7 @@
             });
             $(this).on('focusout', function() {
                 $(this).attr('placeholder',$(this).data('holder'));
-            });     
+            });
         });
 
 
@@ -375,12 +375,12 @@
                 $dataV = $this.data("percent"),
                 $dataDeg = $dataV * 3.6,
                 $round = $this.find(".round_per");
-              $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)"); 
+              $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
               $this.append('<div class="circle_inbox"><span class="percent_text"></span></div>');
               $this.prop('Counter', 0).animate({Counter: $dataV},
               {
-                duration: 2000, 
-                easing: 'swing', 
+                duration: 2000,
+                easing: 'swing',
                 step: function (now) {
                         $this.find(".percent_text").text(Math.ceil(now)+"%");
                     }
@@ -393,10 +393,10 @@
                 setTimeout(function(){
                   $round.css("transform", "rotate(" + parseInt($dataDeg + 180) + "deg)");
                 },1000);
-              } 
+              }
             });
         };
-        
+
 // ------------------------ Password Toggler
         if($(".user-data-form").length) {
           $(".passVicon").on('click', function() {
@@ -464,13 +464,13 @@
             });
           }
 
-    
+
 $(window).on ('load', function (){ // makes sure the whole site is loaded
 
 // -------------------- Site Preloader
         $('#ctn-preloader').fadeOut(); // will first fade out the loading animation
         $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-        $('body').delay(350).css({'overflow':'visible'});
+        // $('body').delay(350).css({'overflow':'visible'});
 
 
 
@@ -485,7 +485,7 @@ $(window).on ('load', function (){ // makes sure the whole site is loaded
             }
           );
           wow.init();
-        
+
 // ------------------------------------- Fancybox
         var fancy = $ (".fancybox");
         if(fancy.length) {
@@ -539,5 +539,5 @@ $(window).on ('load', function (){ // makes sure the whole site is loaded
 
     });  //End On Load Function
 
-    
+
 })(jQuery);
