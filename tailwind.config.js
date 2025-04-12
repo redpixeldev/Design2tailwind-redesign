@@ -24,7 +24,7 @@ module.exports = {
           'max': '1399px'
         },
         'xxl': {
-          'min': '1400px',
+          'min': '1536px',
         },
         'xl': {
           'min': '1200px',
@@ -54,20 +54,26 @@ module.exports = {
     addComponents({
       '.container': {
         maxWidth: '100%',
+				margin: 'auto',
         '@screen sm': {
           maxWidth: '540px',
+					margin: 'auto',
         },
         '@screen md': {
           maxWidth: '720px',
+					margin: 'auto',
         },
         '@screen lg': {
           maxWidth: '960px',
+					margin: 'auto',
         },
         '@screen xl': {
           maxWidth: '1140px',
+					margin: 'auto',
         },
         '@screen xxl': {
           maxWidth: '1320px',
+					margin: 'auto',
         },
       }
     })
