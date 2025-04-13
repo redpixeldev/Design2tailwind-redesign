@@ -410,10 +410,10 @@ body .btn-seventeen:before {
 	@apply block;
 }
 .pricing-table-area-three .tab-content .pr-column.active {
-	@apply xsm:before:!hidden rounded-[15px] border-0 bg-white shadow-[0px_25px_60px_rgba(0,13,48,0.0480786)] before:absolute before:-top-20 before:right-[-75px] before:content-[url(../images/shape/popular-tag.svg)];
+	@apply xsm:before:!hidden rounded-[15px] border-[1px] border-[#b1b2f4] bg-white shadow-[0px_25px_60px_rgba(0,13,48,0.0480786)] before:absolute before:-top-20 before:right-[-75px] before:content-[url(../images/shape/popular-tag.svg)];
 }
 .pricing-table-area-three .tab-content .pr-column.active .btn-twelve {
-	@apply bg-[var(--prime-two)] text-white;
+	@apply bg-[#BC46E2] text-white;
 }
 .pricing-table-area-four .pr-table-wrapper.full-width .pack-details {
 	@apply pb-5;

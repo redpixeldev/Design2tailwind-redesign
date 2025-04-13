@@ -8800,7 +8800,7 @@ body .btn-seventeen {
 body .btn-seventeen:before {
   background: linear-gradient(0deg,#FE3B7D,#FF66C9) border-box;
   -webkit-mask: /*4*/
-    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0) padding-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -9246,8 +9246,8 @@ body .btn-seventeen:before {
 }
 
 .pricing-nav-three .nav-item .nav-link.active {
-  border-color: var(--prime-two);
-  background-color: var(--prime-two);
+  border-color: #BC46E2;
+  background-color: #BC46E2;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -9271,7 +9271,7 @@ body .btn-seventeen:before {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-shadow: 0px 25px 60px rgba(0,13,48,0.0480786);
   --tw-shadow-colored: 0px 25px 60px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #e4e2e8), var(--tw-ring-shadow, 0 0 #e4e2e8), var(--tw-shadow);
 }
 
 .pricing-table-area-three .tab-content .pr-column.active::before {
@@ -9290,10 +9290,11 @@ body .btn-seventeen:before {
 }
 
 .pricing-table-area-three .tab-content .pr-column.active .btn-twelve {
-  background-color: var(--prime-two);
+  background-color: #BC46E2;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+
 
 .block-style-three .list-item.pricing-table-area-three .tab-content .pr-column.active .btn-twelve li:before {
   color: rgba(255,255,255,0.75);
@@ -9358,7 +9359,7 @@ body .btn-seventeen:before {
 
 .card-style-twelve:before {
   -webkit-mask: /*4*/
-    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0) padding-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -9428,7 +9429,7 @@ body .btn-seventeen:before {
 .platform-button-group-two .ios-button:before {
   background: linear-gradient(0deg,#FE3B7D,#FF66C9) border-box;
   -webkit-mask: /*4*/
-    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0) padding-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

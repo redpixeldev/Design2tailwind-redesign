@@ -50,7 +50,9 @@ module.exports = {
   plugins: [
     function ({
     addComponents
-  }) {
+  })
+
+	 {
     addComponents({
       '.container': {
         maxWidth: '100%',
