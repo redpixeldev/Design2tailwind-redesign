@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
 	* {
@@ -37,7 +55,7 @@
 	}
 
 	body {
-		@apply font-Gordita relative text-[16px] text-[color:var(--text-color)];
+		@apply font-Gordita relative text-[16px] text-(--text-color);
 	}
 
 	.h1,
@@ -52,7 +70,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply mt-0 mb-2 leading-[1.2] font-medium text-[var(--heading)];
+		@apply mt-0 mb-2 leading-[1.2] font-medium text-(--heading);
 	}
 	p {
 		@apply mt-0 mb-4 leading-[1.87em];
@@ -136,7 +154,7 @@
 }
 
 body {
-	@apply font-Gordita relative text-[16px] font-normal text-[color:var(--text-color)];
+	@apply font-Gordita relative text-[16px] font-normal text-(--text-color);
 }
 .h1,
 h1,
@@ -150,7 +168,7 @@ h4,
 h5,
 .h6,
 h6 {
-	@apply text-[color:var(--heading)];
+	@apply text-(--heading);
 }
 .h1,
 h1 {
@@ -228,7 +246,7 @@ body .btn-seventeen:before {
 	@apply mx-2.5 my-0;
 }
 .theme-main-menu.sticky-menu.fixed_top {
-	@apply fixed z-[990] bg-white py-3 shadow-[0_13px_35px_-12px_rgba(35,35,35,0.1)];
+	@apply fixed z-990 bg-white py-3 shadow-[0_13px_35px_-12px_rgba(35,35,35,0.1)];
 }
 .theme-main-menu.white-vr .login-btn-three {
 	@apply bg-white;
@@ -277,17 +295,17 @@ body .btn-seventeen:before {
 	@apply top-0 right-0 w-[400px] translate-x-full border-l border-solid border-l-[rgba(0,0,0,0.2)];
 }
 .offcanvas {
-	@apply invisible fixed bottom-0 z-[1045] flex max-w-full flex-col bg-white bg-clip-padding transition-transform duration-[0.3s] ease-[ease-in-out];
+	@apply invisible fixed bottom-0 z-1045 flex max-w-full flex-col bg-white bg-clip-padding transition-transform duration-[0.3s] ease-[ease-in-out];
 }
 .offcanvas-backdrop.show {
 	@apply opacity-50;
 }
 .offcanvas-backdrop {
-	@apply fixed top-0 left-0 z-[1040] h-screen w-screen bg-black;
+	@apply fixed top-0 left-0 z-1040 h-screen w-screen bg-black;
 }
 .sidebar-nav .sidebar-nav-item .nav-item:hover > a,
 .sidebar-nav .sidebar-nav-item .nav-item.active > a {
-	@apply text-[color:var(--prime-ten)];
+	@apply text-(--prime-ten);
 }
 .sidebar-nav .sidebar-nav-item .dropdown-toggle.show::before {
 	@apply rotate-180 content-["-"];
@@ -299,7 +317,7 @@ body .btn-seventeen:before {
 	@apply border-[#F7F7F7] bg-[#F7F7F7];
 }
 .footer-style-one .footer-nav-link a {
-	@apply hover:text-[color:var(--prime-one)];
+	@apply hover:text-(--prime-one);
 }
 .hero-banner-two .illustration-holder .main-screen {
 	@apply rounded-[25px];
@@ -309,7 +327,7 @@ body .btn-seventeen:before {
 	@apply border-b-[#FFD35B] bg-[#FBFBFB];
 }
 .pricing-nav-one .nav-item .nav-link.active {
-	@apply bg-[var(--prime-two)] text-white;
+	@apply bg-(--prime-two) text-white;
 }
 .hero-banner-three .download-btn button.show:after {
 	@apply rotate-180;
@@ -318,7 +336,7 @@ body .btn-seventeen:before {
 	@apply whitespace-nowrap;
 }
 .dropdown-menu {
-	@apply absolute z-[1000] hidden min-w-[10rem] bg-white bg-clip-padding text-left text-[16px] text-[#212529];
+	@apply absolute z-1000 hidden min-w-40 bg-white bg-clip-padding text-left text-[16px] text-[#212529];
 }
 .dropdown-menu.show {
 	@apply block;
@@ -327,10 +345,10 @@ body .btn-seventeen:before {
 	@apply rotate-180;
 }
 .hero-banner-three .download-btn button.show {
-	@apply bg-[var(--prime-three)];
+	@apply bg-(--prime-three);
 }
 .hero-banner-three .video-icon:hover i {
-	@apply border-[color:var(--prime-three)] bg-[var(--prime-three)] text-white;
+	@apply border-(--prime-three) bg-(--prime-three) text-white;
 }
 .block-style-three .list-item.text-white li:before {
 	@apply text-[rgba(255,255,255,0.75)];
@@ -345,7 +363,7 @@ body .btn-seventeen:before {
 	@apply mx-[5px] my-0 h-2 w-2 rounded-[50%] bg-[rgba(0,0,0,0.1)] indent-[-50000px] transition-all duration-[0.3s] ease-[ease-in-out];
 }
 .slick-dots li.slick-active button {
-	@apply scale-[1.7] bg-[var(--prime-three)];
+	@apply scale-[1.7] bg-(--prime-three);
 }
 .fancy-feature-eleven.bg-color {
 	@apply bg-[#F3F7F8];
@@ -354,7 +372,7 @@ body .btn-seventeen:before {
 	@apply border-[#1B1B1B] bg-[#1B1B1B] text-white;
 }
 .pricing-table-area-two .pr-column.active {
-	@apply xsm:before:!hidden shadow-[0_40px_80px_rgba(3,17,54,0.04)] before:absolute before:top-[-62px] before:-right-24 before:content-[url(../images/shape/popular-tag.svg)] sm:before:!hidden;
+	@apply xsm:before:hidden! shadow-[0_40px_80px_rgba(3,17,54,0.04)] before:absolute before:top-[-62px] before:-right-24 before:content-[url(../images/shape/popular-tag.svg)] sm:before:hidden!;
 }
 .g-control-nav-one li.is-checked {
 	@apply font-medium text-black;
@@ -377,7 +395,7 @@ body .btn-seventeen:before {
 }
 @media (min-width: 576px) {
 	.modal-dialog {
-		@apply !m-[1.75rem_auto] max-w-[500px];
+		@apply m-[1.75rem_auto]! max-w-[500px];
 	}
 }
 .btn-close {
@@ -395,13 +413,13 @@ body .btn-seventeen:before {
 	@apply opacity-50;
 }
 .modal-backdrop {
-	@apply fixed top-0 left-0 z-[1050] h-screen w-screen bg-black;
+	@apply fixed top-0 left-0 z-1050 h-screen w-screen bg-black;
 }
 .theme-basic-footer[class*='-five'] {
 	@apply text-[rgba(255,255,255,0.7)];
 }
 .pricing-nav-three .nav-item .nav-link.active {
-	@apply border-[color:var(--prime-two)] bg-[var(--prime-two)] text-white;
+	@apply border-(--prime-two) bg-(--prime-two) text-white;
 }
 .tab-content > .tab-pane {
 	@apply hidden;
@@ -410,7 +428,7 @@ body .btn-seventeen:before {
 	@apply block;
 }
 .pricing-table-area-three .tab-content .pr-column.active {
-	@apply xsm:before:!hidden rounded-[15px] border-[1px] border-[#b1b2f4] bg-white shadow-[0px_25px_60px_rgba(0,13,48,0.0480786)] before:absolute before:-top-20 before:right-[-75px] before:content-[url(../images/shape/popular-tag.svg)];
+	@apply xsm:before:hidden! rounded-[15px] border border-[#b1b2f4] bg-white shadow-[0px_25px_60px_rgba(0,13,48,0.0480786)] before:absolute before:-top-20 before:right-[-75px] before:content-[url(../images/shape/popular-tag.svg)];
 }
 .pricing-table-area-three .tab-content .pr-column.active .btn-twelve {
 	@apply bg-[#BC46E2] text-white;
@@ -509,12 +527,12 @@ body .btn-seventeen:before {
 	@apply border-0;
 }
 .accordion-style-four .accordion-button:not(.collapsed)::after {
-	@apply transform-none bg-[var(--prime-eight)] text-black content-['-'];
+	@apply transform-none bg-(--prime-eight) text-black content-['-'];
 }
 .hero-banner-ten .search-area .nice-select .option:hover,
 .hero-banner-ten .search-area .nice-select .option.focus,
 .hero-banner-ten .search-area .nice-select .option.selected.focus {
-	@apply !bg-[var(--prime-ten)] text-white;
+	@apply bg-(--prime-ten)! text-white;
 }
 .accordion-collapse.collapse:not(.show):not(.show) {
 	@apply hidden;
@@ -535,13 +553,13 @@ body .btn-seventeen:before {
 	@apply h-2.5 w-2.5 bg-[rgba(0,0,0,0.1)];
 }
 .feedback-section-eleven .slick-dots li.slick-active button {
-	@apply scale-100 bg-[var(--prime-ten)];
+	@apply scale-100 bg-(--prime-ten);
 }
 .feedback-section-thirteen .slick-center .feedback-block-eleven {
 	@apply before:opacity-100;
 }
 .feedback-section-thirteen .slick-dots {
-	@apply !hidden;
+	@apply hidden!;
 }
 .hero-banner-eleven .hero-heading span {
 	text-shadow: 0 0 1px #3c3c3c;
@@ -589,7 +607,7 @@ body .btn-seventeen:before {
 .hero-banner-thirteen .input-block .nice-select .option:hover,
 .hero-banner-thirteen .input-block .nice-select .option.focus,
 .hero-banner-thirteen .input-block .nice-select .option.selected.focus {
-	@apply !bg-[var(--prime-twelve)] text-black;
+	@apply bg-(--prime-twelve)! text-black;
 }
 .card-style-twentyOne .hover-overlay [class*='btn'] {
 	@apply translate-y-5 opacity-0;
@@ -658,7 +676,7 @@ body .btn-seventeen:before {
 	border: 0 !important;
 }
 .portfolio-details-two #gallery-carousel [class*='carousel-control-'] {
-	@apply top-[calc(50%_-_22px)] h-[45px] w-[45px] bg-white text-[20px] text-black opacity-100;
+	@apply top-[calc(50%-22px)] h-[45px] w-[45px] bg-white text-[20px] text-black opacity-100;
 }
 .carousel {
 	@apply relative;
@@ -695,7 +713,7 @@ body .btn-seventeen:before {
 .carousel-fade .carousel-item.active,
 .carousel-fade .carousel-item-next.carousel-item-start,
 .carousel-fade .carousel-item-prev.carousel-item-end {
-	@apply z-[1] opacity-100;
+	@apply z-1 opacity-100;
 }
 .carousel-fade .active.carousel-item-start,
 .carousel-fade .active.carousel-item-end {
@@ -703,7 +721,7 @@ body .btn-seventeen:before {
 }
 .carousel-control-prev,
 .carousel-control-next {
-	@apply absolute inset-y-0 z-[1] flex w-[15%] items-center justify-center border-0 p-0 text-center text-white opacity-50 transition-opacity duration-[0.15s] ease-[ease];
+	@apply absolute inset-y-0 z-1 flex w-[15%] items-center justify-center border-0 p-0 text-center text-white opacity-50 transition-opacity duration-[0.15s] ease-[ease];
 	background: 0 0;
 }
 .carousel-control-next {
@@ -713,7 +731,7 @@ body .btn-seventeen:before {
 	@apply h-[140px];
 }
 .service-sidebar .service-category .current-page a {
-	@apply text-[color:var(--prime-ten)];
+	@apply text-(--prime-ten);
 }
 .sidebar-quote .rating li {
 	@apply mx-0.5 my-0 text-[15px] text-[#FFCC4A];
@@ -728,13 +746,13 @@ body .btn-seventeen:before {
 	clip: rect(0 50px 100px 0em);
 }
 .block-style-eight .percent_more {
-	@apply after:absolute after:top-[0em] after:right-0 after:bottom-0 after:left-[50px] after:bg-[var(--prime-ten)] after:content-[''];
+	@apply after:absolute after:top-[0em] after:right-0 after:bottom-0 after:left-[50px] after:bg-(--prime-ten) after:content-[''];
 }
 .block-style-eight .circle_inbox {
-	@apply absolute inset-[5px] z-[3] rounded-[50%] bg-white;
+	@apply absolute inset-[5px] z-3 rounded-[50%] bg-white;
 }
 .block-style-eight .percent_text {
-	@apply absolute top-2/4 left-2/4 z-[3] -translate-x-2/4 -translate-y-2/4 text-[20px] font-medium text-[#000F5C];
+	@apply absolute top-2/4 left-2/4 z-3 -translate-x-2/4 -translate-y-2/4 text-[20px] font-medium text-[#000F5C];
 }
 .user-data-section .input-group-meta .valid-sign img {
 	@apply opacity-0 transition-all duration-[0.2s] ease-[ease-in-out];
@@ -746,7 +764,7 @@ body .btn-seventeen:before {
 	@apply opacity-0;
 }
 .user-data-section .agreement-checkbox label a {
-	@apply text-[color:var(--p-color)] underline;
+	@apply text-(--p-color) underline;
 }
 .user-data-section .agreement-checkbox input[type='checkbox']:checked + label:before {
 	@apply !font-Bootstrap border-black bg-black text-white content-["\f272"];
@@ -787,7 +805,7 @@ body .btn-seventeen:before {
 	@apply text-[14px] tracking-[0.88px] hover:text-black;
 }
 .form-style-five [class*='btn-']:hover {
-	@apply bg-[var(--prime-eight)];
+	@apply bg-(--prime-eight);
 }
 .navbar-toggler::before {
 	-webkit-transform: translate3d(0, -9px, 0) scale3d(1, 1, 1);
@@ -814,49 +832,49 @@ body .btn-seventeen:before {
 .theme-menu-eight .navbar .dropdown-menu .dropdown:hover > .dropdown-item,
 .theme-menu-eight .navbar .dropdown-menu .dropdown-item.active,
 .theme-menu-eight .navbar .dropdown-menu .dropdown-item:hover {
-	@apply text-[color:var(--prime-ten)];
+	@apply text-(--prime-ten);
 }
 .theme-menu-two .navbar .navbar-nav .nav-item.active .nav-link,
 .theme-menu-two .navbar .navbar-nav .nav-item:hover .nav-link,
 .theme-menu-two .navbar .dropdown-menu .dropdown:hover > .dropdown-item,
 .theme-menu-two .navbar .dropdown-menu .dropdown-item.active,
 .theme-menu-two .navbar .dropdown-menu .dropdown-item:hover {
-	@apply text-[color:var(--prime-two)];
+	@apply text-(--prime-two);
 }
 .theme-menu-three .navbar .dropdown-menu .dropdown:hover > .dropdown-item,
 .theme-menu-three .navbar .dropdown-menu .dropdown-item.active,
 .theme-menu-three .navbar .dropdown-menu .dropdown-item:hover {
-	@apply text-[color:var(--prime-three)];
+	@apply text-(--prime-three);
 }
 .theme-menu-six .navbar .navbar-nav .nav-item.active .nav-link,
 .theme-menu-six .navbar .navbar-nav .nav-item:hover .nav-link,
 .theme-menu-six .navbar .dropdown-menu .dropdown:hover > .dropdown-item,
 .theme-menu-six .navbar .dropdown-menu .dropdown-item.active,
 .theme-menu-six .navbar .dropdown-menu .dropdown-item:hover {
-	@apply text-[color:var(--prime-six)];
+	@apply text-(--prime-six);
 }
 .theme-menu-seven .navbar .navbar-nav .nav-item.active .nav-link,
 .theme-menu-seven .navbar .navbar-nav .nav-item:hover .nav-link,
 .theme-menu-seven .navbar .dropdown-menu .dropdown:hover > .dropdown-item,
 .theme-menu-seven .navbar .dropdown-menu .dropdown-item.active,
 .theme-menu-seven .navbar .dropdown-menu .dropdown-item:hover {
-	@apply text-[color:var(--prime-nine)];
+	@apply text-(--prime-nine);
 }
 .navbar .navbar-nav .nav-item.active .nav-link,
 .navbar .navbar-nav .nav-item:hover .nav-link {
-	@apply text-[color:var(--prime-one)];
+	@apply text-(--prime-one);
 }
 .theme-menu-nine .navbar .navbar-nav .nav-item.active .nav-link,
 .theme-menu-nine .navbar .navbar-nav .nav-item:hover .nav-link,
 .theme-menu-nine .navbar .dropdown-menu .dropdown:hover > .dropdown-item,
 .theme-menu-nine .navbar .dropdown-menu .dropdown-item.active,
 .theme-menu-nine .navbar .dropdown-menu .dropdown-item:hover {
-	@apply text-[color:var(--prime-two)];
+	@apply text-(--prime-two);
 }
 .navbar .dropdown-menu .dropdown:hover > .dropdown-item,
 .navbar .dropdown-menu .dropdown-item.active,
 .navbar .dropdown-menu .dropdown-item:hover {
-	@apply text-[color:var(--prime-one)];
+	@apply text-(--prime-one);
 }
 .white-vr .navbar .navbar-nav .nav-item.active .nav-link,
 .white-vr .navbar .navbar-nav .nav-item:hover .nav-link {
@@ -930,7 +948,7 @@ body .btn-seventeen:before {
 }
 @media screen and (max-width: 991px) {
 	.navbar-nav .dropdown-menu {
-		@apply !static;
+		@apply static!;
 	}
 	.navbar {
 		@apply p-0;
@@ -942,7 +960,7 @@ body .btn-seventeen:before {
 		@apply right-0 text-[15px] leading-[50px];
 	}
 	.navbar-collapse {
-		@apply fixed top-0 left-0 z-[9999] clear-both block h-screen max-h-screen w-80 max-w-[calc(100vw_-_60px)] -translate-x-full overflow-y-auto bg-white px-[15px] pt-8 pb-5 transition-all duration-[0.3s] ease-[ease-in-out];
+		@apply fixed top-0 left-0 z-9999 clear-both block h-screen max-h-screen w-80 max-w-[calc(100vw-60px)] -translate-x-full overflow-y-auto bg-white px-[15px] pt-8 pb-5 transition-all duration-[0.3s] ease-[ease-in-out];
 	}
 	.white-vr .navbar-collapse {
 		@apply bg-[#151937];
@@ -1007,7 +1025,7 @@ body .btn-seventeen:before {
 /* container all  */
 @media (min-width: 992px) {
 	.container {
-		@apply !px-0;
+		@apply px-0!;
 	}
 }
 
